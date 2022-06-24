@@ -1,0 +1,12 @@
+{
+	"emailDomain": "mijndomein.nl",
+	"scipio": {
+		"username": "username",
+		"password": "password",
+		"pincode": "123456"
+	},
+	"blacklist": [
+		"example@gmail.com",
+		"john.doe@gmail.com"
+	]
+}
