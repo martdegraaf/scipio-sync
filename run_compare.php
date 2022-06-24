@@ -17,14 +17,14 @@ $program = new ExtractScipioMailingList($scipioOnline, $settings);
 //Act
 $emailadressesScipio = $program->extract();
 $gsuiteCompare = new GSuiteCompare();
-$emailadressesGsuite = $gsuite->extract();
-$gsuite->write_gsuite_2_text();
+$emailadressesGsuite = $gsuiteCompare->extract();
+$gsuiteCompare->write_gsuite_2_text();
 
 
 //Write the changes that matter!
 echo "<p>Comparing</p>";
 echo "<p>Scipio: " . count($emailadressesScipio) . "</p>";
 echo "<p>Gsuite: " . count($emailadressesGsuite) . "</p>";
-$gsuite->write_compare_emailadresses_scipio($emailadressesGsuite, $emailadressesScipio);
-$gsuite->write_compare_emailadresses_gsuite($emailadressesGsuite, $emailadressesScipio);
+$gsuiteCompare->write_compare_emailadresses_scipio($emailadressesGsuite, $emailadressesScipio);
+$gsuiteCompare->write_compare_emailadresses_gsuite($emailadressesGsuite, $emailadressesScipio);
 ?>

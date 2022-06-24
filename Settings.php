@@ -3,7 +3,7 @@
  * The settings class responsible for loading settings.json and giving the correct settings to the classes.
  */
 class Settings{
-	private object $settings;
+	private $settings;
 	
 	function __construct() {
 		$this->GetSettings();
@@ -15,14 +15,14 @@ class Settings{
 	}
 	
 	public function GetBlacklist(){
-		return $settings->blacklist;
+		return $this->settings->blacklist;
 	}
 
 	public function GetScipioSettings(){
-		return $settings->scipio;
+		return $this->settings->scipio;
 	}
 
 	public function GetEmailDomain(){
-		return $settings->emailDomain;
+		return $this->settings->emailDomain;
 	}
 }

@@ -15,8 +15,8 @@ class ExtractScipioMailingList{
 	const SUFFIX_FLAG = false;
 	const WIJK_FLAG = true;
 
-	private ScipioOnline $scipio;
-	private Settings $settings;
+	private $scipio;
+	private $settings;
 	
 	function __construct($scipioOnline, $settings) {
 		$this->scipio = $scipioOnline;
@@ -40,7 +40,7 @@ class ExtractScipioMailingList{
 			
 			if($persoon->should_export_email() && 
 				!in_arrayi($persoon->get_email(), $foundEmailAdresses) &&
-				!in_arrayi($persoon->get_email(), $settings->getBlacklist()) )
+				!in_arrayi($persoon->get_email(), $this->settings->getBlacklist()) )
 			{
 				$wijk = $persoon->get_wijk();
 				if(!isset($wijken[$wijk])){
