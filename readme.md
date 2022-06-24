@@ -4,7 +4,7 @@ Endpoint om huidige uit Scipio in file te zetten evenals die van gsuite. (gsuite
 
 ## Configuratie
 1. Rename `settings.template.json` naar `settings.json` en vul de benodigde settings in.
-2. `google-routing-current.json` moet de huidige data uit de Gsuite bevatten.
+2. Rename `google-routing-current.template.json` naar `google-routing-current.json` en vul deze met de huidige data uit de Gsuite-lijst.
 
 # Stappenplan Sync
 
