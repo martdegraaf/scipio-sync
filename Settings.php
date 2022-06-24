@@ -5,7 +5,7 @@
 class Settings{
 	private object $settings;
 	
-	function __construct($name) {
+	function __construct() {
 		$this->GetSettings();
 	}
 
