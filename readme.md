@@ -3,17 +3,18 @@
 Endpoint om huidige uit Scipio in file te zetten evenals die van gsuite. (gsuite moet nog zelf eerst in configuratiebestand google-routing-current.json worden geplaatst)
 
 ## Configuratie
+1. Rename `settings.template.json` naar `settings.json` en vul de benodigde settings in.
+2. `google-routing-current.json` moet de huidige data uit de Gsuite bevatten.
 
-Rename `settings.template.json` naar `settings.json` en vul de benodigde settings in.
+# Stappenplan Sync
 
-# Stappenplan
-
-1. Verbind via SSH met de website 'gkvhetlichtpunt.nl'
-2. Ga naar de folder `cd /opt/scipiosync/scipio-sync-main`
-3. Haal de huidige emailadressen via F12 uit de source van de Gsuite. en zet deze in `google-routing-current.json`
-4. Voer de compare uit `php8.1 run_compare.php`
-5. Doe bulk import in Gsuite met de lijst `diff-to-add-comma-seperated.txt` om de gemiste records toe te voegen.
-6. Remove alle emailadressen die gemeld staan in `diff-to-remove.json` maak ze mooi door dit command: `jq . diff-to-remove.json`.
+1. Verbind via SSH met de website 
+2. Zet deze repository in een folder neer op de server.
+3. Zorg dat je in de folder `cd /opt/scipiosync/scipio-sync-main` zit.
+4. Haal de huidige emailadressen via F12 uit de source van de Gsuite. en zet deze in `config/google-routing-current.json`
+5. Voer de compare uit `php8.1 run_compare.php`
+6. Doe bulk import in Gsuite met de lijst `diff-to-add-comma-seperated.txt` om de gemiste records toe te voegen.
+7. Remove alle emailadressen die gemeld staan in `diff-to-remove.json` maak ze mooi door dit command: `jq . diff-to-remove.json`.
 
 
 # Notities

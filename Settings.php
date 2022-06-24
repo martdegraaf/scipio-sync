@@ -10,7 +10,7 @@ class Settings{
 	}
 
 	public function GetSettings(){
-		$settingsContents = file_get_contents("settings.json");
+		$settingsContents = file_get_contents("config/settings.json");
 		$this->settings = json_decode($settingsContents);
 	}
 	

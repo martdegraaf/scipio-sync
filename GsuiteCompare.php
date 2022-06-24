@@ -1,16 +1,16 @@
 <?php
 /**
- * Gsuite data must be available in google-routing-current.json
+ * Gsuite data must be available in config/google-routing-current.json
  * Then this class can compare actual gsuite with expected from scipio.
  */
 class GSuiteCompare{
 	public function extract(){
-		$emailadresses = json_decode(file_get_contents("google-routing-current.json"));
+		$emailadresses = json_decode(file_get_contents("config/google-routing-current.json"));
 		return $emailadresses;
 	}
 	
 	public function write_gsuite_2_text(){
-		$emailadresses = json_decode(file_get_contents("google-routing-current.json"));
+		$emailadresses = json_decode(file_get_contents("config/google-routing-current.json"));
 		usort($emailadresses, "cmp_email_array");
 		$fileContent = "";
 		foreach($emailadresses as $emailadresPair){
