@@ -1,4 +1,4 @@
-﻿settings.json
+﻿*.json
 *.txt
-scipio-gsuite-mailinglijst.json
-google-routing-current.json
+!config/settings.template.json
+!config/google-routing-current.template.json
