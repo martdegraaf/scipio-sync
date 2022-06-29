@@ -6,6 +6,11 @@ Endpoint om huidige uit Scipio in file te zetten evenals die van gsuite. (gsuite
 1. Rename `settings.template.json` naar `settings.json` en vul de benodigde settings in.
 2. Rename `google-routing-current.template.json` naar `google-routing-current.json` en vul deze met de huidige data uit de Gsuite-lijst.
 
+```cmd
+cp settings.template.json settings.json
+cp google-routing-current.template.json google-routing-current.json
+```
+
 # Stappenplan Sync
 
 1. Verbind via SSH met de website 
@@ -28,3 +33,19 @@ Output van script:
 5. `gsuite-mailinglijst.txt` => text representatie van Scipio emailadressen **wijk-emailadres,persoon-emailadres**
 6. `gsuite-mailinglijst-actual.txt` => text representatie van gsuite actual **wijk-emailadres,persoon-emailadres**
 
+# Classes
+
+::: mermaid
+sequenceDiagram
+
+    Main->>ScipioOnline: extract
+    ScipioOnline->>Main: returns Array of emailadresses
+    Main->>Gsuite: extract
+    Gsuite->>Main: returns Array of emailadresses
+    
+    Main->>Gsuite: compare scipio agains Gsuite
+    Note right of Gsuite: write output to diff-to-add.json
+    Main->>Gsuite: compare Gsuite agains scipio
+    Note right of Gsuite: write output to diff-to-remove.json
+    
+:::
