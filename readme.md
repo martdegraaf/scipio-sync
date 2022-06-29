@@ -35,7 +35,7 @@ Output van script:
 
 # Classes
 
-::: mermaid
+``` mermaid
 sequenceDiagram
 
     Main->>ScipioOnline: extract
@@ -47,5 +47,4 @@ sequenceDiagram
     Note right of Gsuite: write output to diff-to-add.json
     Main->>Gsuite: compare Gsuite agains scipio
     Note right of Gsuite: write output to diff-to-remove.json
-    
-:::
+```
