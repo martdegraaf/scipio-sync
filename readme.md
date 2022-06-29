@@ -40,11 +40,11 @@ sequenceDiagram
 
     Main->>ScipioOnline: extract
     ScipioOnline->>Main: returns Array of emailadresses
-    Main->>Gsuite: extract
-    Gsuite->>Main: returns Array of emailadresses
+    Main->>GsuiteCompare: extract
+    GsuiteCompare->>Main: returns Array of emailadresses
     
-    Main->>Gsuite: compare scipio agains Gsuite
-    Note right of Gsuite: write output to diff-to-add.json
-    Main->>Gsuite: compare Gsuite agains scipio
-    Note right of Gsuite: write output to diff-to-remove.json
+    Main->>GsuiteCompare: compare scipio agains Gsuite
+    Note right of GsuiteCompare: write output to diff-to-add.json
+    Main->>GsuiteCompare: compare Gsuite agains scipio
+    Note right of GsuiteCompare: write output to diff-to-remove.json
 ```
